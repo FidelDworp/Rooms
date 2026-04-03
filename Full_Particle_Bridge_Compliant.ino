@@ -1,7 +1,12 @@
 // Full_Particle_Bridge_Compliant.ino
 // HomeSpan 2.1.5 — Full Lights.html bridge (compliance fixes)
 // Wijzigingen:
-//  - Vervangen van defecte Zitplaats controller (New ID: 200033000547373336323230)
+//  - 3apr26: 5 defecte controllers vervangen:
+//    "2c0026000747343232363230", "R3-INKOM"
+//    "3c0030000a47353138383138", "R6-EETPL"
+//    "200033000547373336323230", "R7-ZITPL"
+//    "30002d000747353138383138", "R8-ACCESS"
+//    "3e003f001447343338333633", "S-OUTSIDE"
 //  - homeSpan.setLogLevel(1)
 //  - homeSpan.begin(Category::Bridges, ...)
 //  - voor elk button maken we een *nieuw* SpanAccessory() + AccessoryInformation()
@@ -23,13 +28,13 @@ ControllerDef controllers[] = {
   { "Zitplaats", "200033000547373336323230", "manual", {"muurspots","tvback","clocktime","clockbrightness", nullptr} },
   { "BandB",     "30002c000547343233323032", "manual", {"bandb","buitentrap", nullptr} },
   { "Badkamer",  "5600420005504b464d323520", "manual", {"badkamer","leeslampjes", nullptr} },
-  { "Inkom",     "420035000e47343432313031", "manual", {"inkom","dressing","trapcolor", nullptr} },
+  { "Inkom",     "2c0026000747343232363230", "manual", {"inkom","dressing","trapcolor", nullptr} },
   { "Keuken",    "310017001647373335333438", "manual", {"spots", nullptr} },
   { "Wasplaats", "33004f000e504b464d323520", "manual", {"wasplaats","toilet", nullptr} },
-  { "Eetplaats", "210042000b47343432313031", "manual", {"ramenintensity","tafel","bib", nullptr} },
-  { "Slaapkamer","210042000b47343432313031", "manual", {"buro","bed", nullptr} },
-  { "Buiten",    "2d0032001247333438353733", "manual", {"S","W2","W1", nullptr} },
-  { "Outside",   "390028001147343339383037", "manual", {"sunlightmode", nullptr} },
+  { "Eetplaats", "3c0030000a47353138383138", "manual", {"ramenintensity","tafel","bib", nullptr} },
+  { "Slaapkamer","3c0030000a47353138383138", "manual", {"buro","bed", nullptr} },
+  { "Buiten",    "30002d000747353138383138", "manual", {"S","W2","W1", nullptr} },
+  { "Outside",   "3e003f001447343338333633", "manual", {"sunlightmode", nullptr} },
   { "HVAC",      "3e003f001447343338333633", "manual", {"hvacmode","sch","won", nullptr} }
 };
 const int NUM_CONTROLLERS = sizeof(controllers)/sizeof(controllers[0]);
